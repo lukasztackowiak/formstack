@@ -1,9 +1,6 @@
 require 'rubygems'
-require 'test/unit'
+require 'minitest/autorun'
 require 'shoulda'
-
-require 'redgreen'
-require 'matchy'
 require 'fakeweb'
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), '..', 'lib'))
@@ -14,9 +11,6 @@ require 'formstack'
 # Set the default allow_net_connect option--usually you'll want this off.
 # You don't usually want your test suite to make HTTP connections, do you?
 FakeWeb.allow_net_connect = false
-
-class Test::Unit::TestCase
-end
 
 def fixture_file(filename)
   return '' if filename == ''

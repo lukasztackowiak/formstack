@@ -1,13 +1,11 @@
 require 'httparty'
 require 'hashie'
 
-directory = File.expand_path(File.dirname(__FILE__))
+require 'formstack/client'
+require 'formstack/version'
 
 module Formstack
-  
-  VERSION = "0.0.1".freeze
 
-  
   class FormstackError < StandardError
     attr_reader :data
 
@@ -16,6 +14,5 @@ module Formstack
       super
     end
   end
-end
 
-require File.join(directory, 'formstack', 'client')
+end
